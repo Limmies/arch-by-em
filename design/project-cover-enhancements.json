@@ -1,0 +1,95 @@
+{
+  "tool": "built-in imagegen (edit mode)",
+  "images": [
+    {
+      "title": "House Kamter",
+      "source": "dist/assets/house-51.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. Retain the misty, overcast Norwegian atmosphere, timber cladding, concrete, glazing and pool geometry.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-e880ed7c-56a3-4b98-9158-ec3a312bb71b.png",
+      "saved_path": "design/project-covers/house-kamter-enhanced.png",
+      "cover_asset": "project-covers/house-kamter-enhanced.jpg",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "title": "Red Box Theatre",
+      "source": "dist/assets/theatre-25.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. Retain the daylight, exact red brick and concrete facade design, glazing, stairs, landscaping and the two foreground pedestrians.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-d98a564b-1904-4d02-947a-30f4966aae5d.png",
+      "saved_path": "design/project-covers/red-box-theatre-enhanced.png",
+      "cover_asset": "project-covers/red-box-theatre-enhanced.jpg",
+      "width": 1671,
+      "height": 941
+    },
+    {
+      "title": "Kelp Line",
+      "source": "dist/assets/kommetjie-cover.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. Retain the warm coastal light, eucalyptus timber structure, all stepped seating, roof curves and the existing people.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-16f69fa6-2198-4da1-8cd3-b1bde5978da7.png",
+      "saved_path": "design/project-covers/kelp-line-enhanced.png",
+      "cover_asset": "project-covers/kelp-line-enhanced.jpg",
+      "width": 1670,
+      "height": 942
+    },
+    {
+      "title": "The Woodstock Furnace",
+      "source": "dist/assets/cover-18.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. This is a monochrome axonometric architectural LINE DRAWING. Keep it strictly a black-and-white line drawing on white, with the exact same roofs, brick hatch, window openings and projection. Only clean compression softness and make existing lines more legible. Do not create a photoreal render, add colors, shadows or new linework.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-d5f96eb7-afcd-448e-8b4a-7a3c375ac8ee.png",
+      "saved_path": "design/project-covers/the-woodstock-furnace-enhanced.png",
+      "cover_asset": "project-covers/the-woodstock-furnace-enhanced.jpg",
+      "width": 1626,
+      "height": 967
+    },
+    {
+      "title": "Seriti",
+      "source": "dist/assets/cover-13.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. Retain its architectural landscape-render and collage character, the faint distant skyline, exact planted roof outlines, water edge and paths.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-375c9930-2bdb-461e-bc76-6a64e1ecd62b.png",
+      "saved_path": "design/project-covers/seriti-enhanced.png",
+      "cover_asset": "project-covers/seriti-enhanced.jpg",
+      "width": 1666,
+      "height": 944
+    },
+    {
+      "title": "Gathered Voices",
+      "source": "dist/assets/cover-26.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. Retain all the patterned canopy motifs, timber posts, gabion wall, decking, existing people and their placement. Keep the current viewpoint and human figures; do not add people or replace their clothing.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-f4581337-9260-4388-90b9-8d4941ed8db7.png",
+      "saved_path": "design/project-covers/gathered-voices-enhanced.png",
+      "cover_asset": "project-covers/gathered-voices-enhanced.jpg",
+      "width": 1671,
+      "height": 941
+    },
+    {
+      "title": "Light as Design Informant",
+      "source": "dist/assets/cover-16.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. Retain the exact perforated wall opening pattern and count, chair, two vessels, warm plaster colors and sunlight direction.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-fa28962a-0e1f-4340-ac1d-bca8d0c00345.png",
+      "saved_path": "design/project-covers/light-as-design-informant-enhanced.png",
+      "cover_asset": "project-covers/light-as-design-informant-enhanced.jpg",
+      "width": 1096,
+      "height": 1435
+    },
+    {
+      "title": "Crèche",
+      "source": "dist/assets/cover-28.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. This is a photograph/collage of a HANDMADE PHYSICAL ARCHITECTURAL MODEL. Preserve the cardboard contour layers, paper trees, cutout children, curved white model walls and model greenery exactly. Keep the handmade model aesthetic; do not turn it into a life-size or photoreal building.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-9b85bbef-deef-4459-a498-4ef3aa3ce903.png",
+      "saved_path": "design/project-covers/creche-enhanced.png",
+      "cover_asset": "project-covers/creche-enhanced.jpg",
+      "width": 1676,
+      "height": 939
+    },
+    {
+      "title": "Op-o-site",
+      "source": "dist/assets/cover-30.jpg",
+      "prompt": "Edit this architectural portfolio project cover with restrained professional image enhancement: improve clarity, balanced exposure and existing texture definition. Preserve the full original uncropped composition, aspect ratio, viewpoint, exact design geometry, materials and all object and people placements. Keep the original medium and artistic character. Do not crop, zoom, redesign, invent details, add objects or add text. Avoid heavy HDR, oversaturation or exaggerated lighting. This is a top-down photograph of a HANDMADE MATERIAL PROTOTYPE. Preserve the exact wire and timber structure, string wrapping, brass-colored pieces, butterfly, board, bolts and their positions. Keep it a real physical model photo, not a render.",
+      "generated_path": "/Users/limmies/.codex/generated_images/01a15e80-eafd-76d1-bc1f-e671a710d8fa/exec-32946dc7-bca2-4bb7-a889-240467c7b80c.png",
+      "saved_path": "design/project-covers/op-o-site-enhanced.png",
+      "cover_asset": "project-covers/op-o-site-enhanced.jpg",
+      "width": 1630,
+      "height": 965
+    }
+  ]
+}
