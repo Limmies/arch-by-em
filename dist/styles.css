@@ -78,3 +78,17 @@ h1,h2,h3{color:var(--heading-gray)}h1 em,h2 em,.contact h2 span{color:var(--acce
 
 /* Display the enhanced cover colors and detail without the former muted filter. */
 #projects .project-image img{filter:none;mix-blend-mode:normal}
+
+/* Larger Instagram photographs and animation controlled by requestAnimationFrame. */
+.instagram-strip{grid-auto-columns:calc((100% - 40px)/3);gap:20px}
+.instagram-strip.is-looping{scroll-snap-type:none;scroll-behavior:auto}
+.instagram-photo{aspect-ratio:4/3;padding:0;background:#f5f2ec}
+.instagram-photo img{padding:0;object-fit:cover;transform:scale(var(--photo-scale,1));transition:transform .6s ease}
+.instagram-card:hover img{transform:scale(var(--photo-scale,1))}
+.instagram-card[href*="DdYpswtDJJ2"]{--photo-scale:1.12}
+.instagram-card[href*="DdYrN8gtomA"]{--photo-scale:1.16}
+.instagram-card[href*="DdYgdFJjRoO"]{--photo-scale:1.65}
+.instagram-card[href*="DdYgA8tNNMG"] .instagram-photo img{object-fit:contain}
+@media(max-width:1000px){.instagram-strip{grid-auto-columns:calc((100% - 20px)/2)}}
+@media(max-width:760px){.instagram-strip{grid-auto-columns:90%;gap:16px}.instagram-photo{padding:0}.instagram-card:hover img{transform:scale(var(--photo-scale,1))}}
+.instagram-card[href*="DdYo-s4DOMw"],.instagram-card[href*="DdYrGFFjcDq"]{--photo-scale:1.3}

@@ -41,28 +41,41 @@ const contactForm=document.querySelector('.contact-form');
 contactForm.addEventListener('submit',()=>{const button=contactForm.querySelector('button[type=submit]');button.disabled=true;button.textContent='Opening secure send…';const status=document.querySelector('#contact-status');status.hidden=false;status.textContent='Complete the verification on the next page to submit your message.';});
 window.addEventListener('pageshow',()=>{const button=contactForm.querySelector('button[type=submit]');button.disabled=false;button.innerHTML='Send message <span aria-hidden="true">↗</span>';document.querySelector('#contact-status').hidden=true;});
 
-// Rotate selected Instagram posts every four seconds while the strip is in view.
+// Advance every 2.5 seconds with a gentle 1.9-second glide and a seamless loop.
 (()=>{
  const section=document.querySelector('.instagram-carousel');if(!section)return;
  const strip=section.querySelector('.instagram-strip'),toggle=section.querySelector('#instagram-toggle');
- const motion=window.matchMedia('(prefers-reduced-motion: reduce)');let paused=motion.matches,visible=false,hovered=false,timer=null,interactionUntil=0;
- const focused=()=>section.contains(document.activeElement)&&document.activeElement!==toggle;
- function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start automatic photo rotation':'Pause automatic photo rotation')}
- function advance(direction=1){
-  const max=strip.scrollWidth-strip.clientWidth;if(max<=1)return;
-  const step=strip.querySelector('.instagram-card').getBoundingClientRect().width+parseFloat(getComputedStyle(strip).columnGap);
-  let next=strip.scrollLeft+step*direction;const wrapping=direction>0?strip.scrollLeft>=max-2:strip.scrollLeft<=2;
-  if(wrapping)next=direction>0?0:max;
-  strip.scrollTo({left:Math.max(0,Math.min(max,next)),behavior:motion.matches||wrapping?'instant':'smooth'});
+ const cards=[...strip.children],count=cards.length,motion=matchMedia('(prefers-reduced-motion: reduce)');
+ for(const position of ['before','after']){
+  const fragment=document.createDocumentFragment();
+  cards.forEach(card=>{const copy=card.cloneNode(true);copy.setAttribute('aria-hidden','true');copy.tabIndex=-1;copy.querySelector('img').alt='';fragment.append(copy)});
+  position==='before'?strip.prepend(fragment):strip.append(fragment);
  }
- function schedule(){clearInterval(timer);timer=null;if(paused||!visible||document.hidden)return;timer=setInterval(()=>{if(!hovered&&!focused()&&Date.now()>=interactionUntil)advance(1)},4000)}
+ strip.classList.add('is-looping');
+ let paused=motion.matches,visible=false,hovered=false,timer,frame=0,interactionUntil=0,step=0,length=0;
+ const focused=()=>section.contains(document.activeElement)&&document.activeElement!==toggle;
+ function stop(){cancelAnimationFrame(frame);frame=0}
+ function normalize(){if(!length)return;while(strip.scrollLeft<length-step/2)strip.scrollLeft+=length;while(strip.scrollLeft>=length*2-step/2)strip.scrollLeft-=length}
+ function measure(){const oldStep=step,index=oldStep?Math.round(strip.scrollLeft/oldStep)%count:0;stop();step=cards[0].getBoundingClientRect().width+parseFloat(getComputedStyle(strip).columnGap);length=step*count;strip.scrollLeft=length+index*step}
+ function advance(direction=1){
+  stop();normalize();const start=strip.scrollLeft,target=(Math.round(start/step)+direction)*step;
+  if(motion.matches){strip.scrollLeft=target;normalize();return}
+  const started=performance.now();
+  function glide(now){const progress=Math.min(1,(now-started)/1900);strip.scrollLeft=start+(target-start)*(1-Math.cos(Math.PI*progress))/2;if(progress<1)frame=requestAnimationFrame(glide);else{frame=0;normalize()}}
+  frame=requestAnimationFrame(glide);
+ }
+ function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start automatic photo rotation':'Pause automatic photo rotation')}
+ function schedule(){clearInterval(timer);if(paused||!visible||document.hidden){stop();return}timer=setInterval(()=>{if(!hovered&&!focused()&&Date.now()>=interactionUntil)advance()},2500)}
+ function interact(){stop();interactionUntil=Date.now()+8000}
  toggle.addEventListener('click',()=>{paused=!paused;label();schedule()});
- section.querySelector('#instagram-previous').addEventListener('click',()=>{interactionUntil=Date.now()+8000;advance(-1)});
- section.querySelector('#instagram-next').addEventListener('click',()=>{interactionUntil=Date.now()+8000;advance(1)});
- section.addEventListener('mouseenter',()=>{hovered=true});section.addEventListener('mouseleave',()=>{hovered=false});
- strip.addEventListener('pointerdown',()=>{interactionUntil=Date.now()+8000},{passive:true});strip.addEventListener('wheel',()=>{interactionUntil=Date.now()+8000},{passive:true});
- strip.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();interactionUntil=Date.now()+8000;advance(event.key==='ArrowRight'?1:-1)}});
+ section.querySelector('#instagram-previous').addEventListener('click',()=>{interact();advance(-1)});
+ section.querySelector('#instagram-next').addEventListener('click',()=>{interact();advance(1)});
+ section.addEventListener('mouseenter',()=>{hovered=true;stop()});section.addEventListener('mouseleave',()=>{hovered=false});
+ section.addEventListener('focusin',()=>{if(focused())stop()});
+ strip.addEventListener('pointerdown',interact,{passive:true});strip.addEventListener('wheel',interact,{passive:true});
+ strip.addEventListener('scrollend',()=>{if(!frame)normalize()});
+ strip.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();interact();advance(event.key==='ArrowRight'?1:-1)}});
  document.addEventListener('visibilitychange',schedule);motion.addEventListener('change',()=>{paused=motion.matches;label();schedule()});
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule()},{threshold:.15}).observe(section);
- section.querySelector('.instagram-controls').hidden=false;label();
+ new ResizeObserver(measure).observe(strip);measure();section.querySelector('.instagram-controls').hidden=false;label();
 })();
