@@ -79,21 +79,26 @@ h1,h2,h3{color:var(--heading-gray)}h1 em,h2 em,.contact h2 span{color:var(--acce
 /* Display the enhanced cover colors and detail without the former muted filter. */
 #projects .project-image img{filter:none;mix-blend-mode:normal}
 
-/* Borderless landscape crops: remove the presentation-sheet margins in CSS. */
-.instagram-strip{grid-auto-columns:calc((100% - 40px)/3);gap:20px}
+/* Instagram-inspired post cards show the full original composition. */
+.instagram-strip{grid-auto-columns:calc((100% - 40px)/3);gap:20px;align-items:start}
 .instagram-strip.is-looping{scroll-snap-type:none;scroll-behavior:auto}
-.instagram-photo{aspect-ratio:16/10;padding:0;background:var(--paper);border:0}
-.instagram-photo img,.instagram-card:hover img{position:absolute;inset:auto;width:var(--crop-width,100%);height:var(--crop-height,100%);max-width:none;left:var(--crop-left,0%);top:var(--crop-top,0%);padding:0;object-fit:fill;transform:none;transition:none}
-.instagram-card[href*="DdYpswtDJJ2"]{ --crop-width:157.4803%;--crop-height:178.3465%;--crop-left:-28.7402%;--crop-top:-39.3701%}
-.instagram-card[href*="DdYrN8gtomA"]{ --crop-width:278.2609%;--crop-height:315.1304%;--crop-left:-89.1304%;--crop-top:-107.8261%}
-.instagram-card[href*="DdYo-s4DOMw"]{ --crop-width:157.4803%;--crop-height:178.7402%;--crop-left:-28.7402%;--crop-top:-39.3701%}
-.instagram-card[href*="DdYgdFJjRoO"]{ --crop-width:336.8421%;--crop-height:303.1579%;--crop-left:-118.4211%;--crop-top:-122.1053%}
-.instagram-card[href*="DdYhDS7jXRr"]{ --crop-width:118.3432%;--crop-height:106.5089%;--crop-left:-9.1716%;--crop-top:0.0000%}
-.instagram-card[href*="DdYgA8tNNMG"]{ --crop-width:100.0000%;--crop-height:213.3333%;--crop-left:0.0000%;--crop-top:-53.3333%}
-.instagram-card[href*="Da8o7Y5jAOI"]{ --crop-width:114.2857%;--crop-height:104.8571%;--crop-left:-7.1429%;--crop-top:0.0000%}
-.instagram-card[href*="DdYrGFFjcDq"]{ --crop-width:157.4803%;--crop-height:178.3465%;--crop-left:-28.7402%;--crop-top:-39.3701%}
+.instagram-card{background:#fff;border:1px solid #e5e3df;border-radius:8px;overflow:hidden;color:var(--navy);box-shadow:0 3px 14px #15243b05}
+.instagram-post-header{display:flex;align-items:center;gap:10px;padding:13px 15px;border-bottom:1px solid #eeede9}
+.instagram-avatar{display:grid;place-items:center;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:var(--navy);color:var(--paper);font:italic 20px Georgia,serif}
+.instagram-post-account{font-size:12px;font-weight:600;line-height:1.5;flex:1}
+.instagram-post-account>span{display:block;font-size:10px;font-weight:400;color:var(--muted)}
+.post-icon{width:21px;height:21px;flex-shrink:0;display:block}
+.instagram-photo{aspect-ratio:1;padding:0;border:0;background:#fff;display:flex;align-items:center;justify-content:center}
+.instagram-photo img,.instagram-card:hover img{position:static;inset:auto;display:block;width:100%;height:100%;max-width:100%;padding:0;object-fit:contain;transform:none;transition:none}
+.instagram-post-body{padding:14px 15px 16px;border-top:1px solid #eeede9}
+.instagram-post-actions{display:flex;align-items:center;gap:15px;margin-bottom:13px}
+.instagram-save{margin-left:auto}
+.instagram-caption{display:block;margin:0;font-size:12px;line-height:1.7;min-height:41px}
+.instagram-caption strong{font-weight:600;margin-right:5px}
+.instagram-view{display:inline-flex;align-items:center;gap:7px;font-size:10px;color:var(--muted);margin-top:10px}
+.instagram-view .arrow-icon{width:13px;height:13px}
 @media(max-width:1000px){.instagram-strip{grid-auto-columns:calc((100% - 20px)/2)}}
-@media(max-width:760px){.instagram-strip{grid-auto-columns:90%;gap:16px}.instagram-photo{padding:0}}
+@media(max-width:760px){.instagram-strip{grid-auto-columns:90%;gap:16px}.instagram-photo{padding:0}.instagram-post-account,.instagram-caption{font-size:13px}.instagram-view{font-size:11px}}
 
 /* Show complete project covers without a padded frame or zoom. */
 #projects{align-items:start}
@@ -101,3 +106,12 @@ h1,h2,h3{color:var(--heading-gray)}h1 em,h2 em,.contact h2 span{color:var(--acce
 #projects .project-image img,#projects .project:hover .project-image img{position:static;display:block;inset:auto;width:100%;height:auto;max-height:520px;padding:0;object-fit:contain;object-position:center;transform:none}
 @media(max-width:760px){#projects .project-image img{max-height:460px}}
 #projects .project-image:has(img[src*="light-as-design-informant-enhanced"]){width:min(100%,397px);margin-inline:auto}
+
+/* Draw arrows as vectors so iOS cannot substitute coloured emoji. */
+.arrow-icon{display:inline-block;width:1em;height:1em;min-width:1em;flex-shrink:0;vertical-align:-.15em;overflow:visible}
+.round-link .arrow-icon{width:26px;height:26px}
+.project-image>span .arrow-icon{width:16px;height:16px}
+.gallery-controls button,.instagram-controls button{display:inline-flex;align-items:center;justify-content:center}
+.gallery-controls .arrow-icon,.instagram-controls .arrow-icon{width:20px;height:20px}
+#project-pdf .arrow-icon{margin-left:7px}
+.contact-send button>.arrow-icon{width:20px;height:20px}
