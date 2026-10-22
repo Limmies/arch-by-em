@@ -34,4 +34,4 @@ Added from Emma’s supplied `ste0st24 Kommetjie Presentation.pdf` (11 September
 
 ## Instagram photo strip
 
-Eight selected public posts from @arch.by.em are stored locally in `dist/assets/instagram/`, with their original post URLs in `posts.json`. The strip advances every 4 seconds when visible, pauses on hover/focus and manual interaction, and provides previous, next and play/pause controls. Reduced-motion users start with autoplay off. This is a curated selection; importing new Instagram posts requires updating the assets and markup.
+Eight selected public posts from @arch.by.em are stored locally in `dist/assets/instagram/`, with their original post URLs in `posts.json`. The strip advances every 2.5 seconds with a 1.9-second glide when visible, pauses on hover/focus and manual interaction, and provides previous, next and play/pause controls. Reduced-motion users start with autoplay off. This is a curated selection; importing new Instagram posts requires updating the assets and markup.

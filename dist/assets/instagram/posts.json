@@ -4,51 +4,59 @@
   "posts": [
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYpswtDJJ2/",
-      "image": "assets/instagram/DdYpswtDJJ2.webp",
-      "title": "Kelp Line · On the shoreline",
-      "alt": "An aerial architectural render of Kelp Line beside the beach at Kommetjie"
+      "image": "assets/instagram/enhanced/DdYpswtDJJ2.webp",
+      "title": "Kelp Line \u00b7 On the shoreline",
+      "alt": "An aerial architectural render of Kelp Line beside the beach at Kommetjie",
+      "original_image": "assets/instagram/DdYpswtDJJ2.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYrN8gtomA/",
-      "image": "assets/instagram/DdYrN8gtomA.webp",
-      "title": "Kelp Line · Made in miniature",
-      "alt": "A grey 3D-printed massing model of Kelp Line"
+      "image": "assets/instagram/enhanced/DdYrN8gtomA.webp",
+      "title": "Kelp Line \u00b7 Made in miniature",
+      "alt": "A grey 3D-printed massing model of Kelp Line",
+      "original_image": "assets/instagram/DdYrN8gtomA.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYo-s4DOMw/",
-      "image": "assets/instagram/DdYo-s4DOMw.webp",
-      "title": "Kommetjie · Reading a place",
-      "alt": "Coastal photographs of Kommetjie from Emma’s Kelp Line site studies"
+      "image": "assets/instagram/enhanced/DdYo-s4DOMw.webp",
+      "title": "Kommetjie \u00b7 Reading a place",
+      "alt": "Coastal photographs of Kommetjie from Emma\u2019s Kelp Line site studies",
+      "original_image": "assets/instagram/DdYo-s4DOMw.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYgdFJjRoO/",
-      "image": "assets/instagram/DdYgdFJjRoO.webp",
-      "title": "Light · Space and shadow",
-      "alt": "Sunlight entering an architectural space through a patterned wall"
+      "image": "assets/instagram/enhanced/DdYgdFJjRoO.webp",
+      "title": "Light \u00b7 Space and shadow",
+      "alt": "Sunlight entering an architectural space through a patterned wall",
+      "original_image": "assets/instagram/DdYgdFJjRoO.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYhDS7jXRr/",
-      "image": "assets/instagram/DdYhDS7jXRr.webp",
-      "title": "Light · A physical idea",
-      "alt": "A reflective architectural light model against a dark background"
+      "image": "assets/instagram/enhanced/DdYhDS7jXRr.webp",
+      "title": "Light \u00b7 A physical idea",
+      "alt": "A reflective architectural light model against a dark background",
+      "original_image": "assets/instagram/DdYhDS7jXRr.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYgA8tNNMG/",
-      "image": "assets/instagram/DdYgA8tNNMG.webp",
-      "title": "Light · Lines in motion",
-      "alt": "An abstract line drawing from Light as Design Informant"
+      "image": "assets/instagram/enhanced/DdYgA8tNNMG.webp",
+      "title": "Light \u00b7 Lines in motion",
+      "alt": "An abstract line drawing from Light as Design Informant",
+      "original_image": "assets/instagram/DdYgA8tNNMG.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/Da8o7Y5jAOI/",
-      "image": "assets/instagram/Da8o7Y5jAOI.webp",
-      "title": "House Kamter · In the landscape",
-      "alt": "A timber and concrete home set against a Norwegian mountain landscape"
+      "image": "assets/instagram/enhanced/Da8o7Y5jAOI.webp",
+      "title": "House Kamter \u00b7 In the landscape",
+      "alt": "A timber and concrete home set against a Norwegian mountain landscape",
+      "original_image": "assets/instagram/Da8o7Y5jAOI.webp"
     },
     {
       "url": "https://www.instagram.com/arch.by.em/p/DdYrGFFjcDq/",
-      "image": "assets/instagram/DdYrGFFjcDq.webp",
-      "title": "Kelp Line · People and place",
-      "alt": "A Kelp Line presentation pairing a site photograph with an interior render"
+      "image": "assets/instagram/enhanced/DdYrGFFjcDq.webp",
+      "title": "Kelp Line \u00b7 People and place",
+      "alt": "A Kelp Line presentation pairing a site photograph with an interior render",
+      "original_image": "assets/instagram/DdYrGFFjcDq.webp"
     }
   ]
 }
