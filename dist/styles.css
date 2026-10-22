@@ -94,3 +94,9 @@ h1,h2,h3{color:var(--heading-gray)}h1 em,h2 em,.contact h2 span{color:var(--acce
 .instagram-card[href*="DdYrGFFjcDq"]{ --crop-width:157.4803%;--crop-height:178.3465%;--crop-left:-28.7402%;--crop-top:-39.3701%}
 @media(max-width:1000px){.instagram-strip{grid-auto-columns:calc((100% - 20px)/2)}}
 @media(max-width:760px){.instagram-strip{grid-auto-columns:90%;gap:16px}.instagram-photo{padding:0}}
+
+/* Project covers fill their cards; presentation-style white frames are removed. */
+#projects .project-image{padding:0;background:transparent;aspect-ratio:4/3}
+#projects .project-image img{inset:0;width:100%;height:100%;padding:0;object-fit:cover;object-position:center}
+#projects img[src*="light-as-design-informant-enhanced"]{object-position:50% 68%;transform:scale(1.035)}
+#projects img[src*="op-o-site-enhanced"]{transform:scale(1.28)}
