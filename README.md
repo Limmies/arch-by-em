@@ -1,5 +1,9 @@
 # arch.by.em
 
+Live website: https://limmies.github.io/arch-by-em/
+
+Publish updates to the `main` branch of `Limmies/arch-by-em`; GitHub Actions deploys `dist/` to GitHub Pages.
+
 Emma Steyn’s architectural portfolio. Plain HTML, CSS and JavaScript; no build or dependencies. The complete website is in `dist/`.
 
 ## GitHub Pages

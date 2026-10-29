@@ -1,0 +1,89 @@
+// SVG strokes keep arrows consistent across desktop and mobile font systems.
+const arrowIcon=()=>'<svg width="20" height="20" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg>';
+const projects = [
+ {title:'House Kamter',subtitle:'Emerging from the mountains',location:'Geirangerfjord, Norway',year:'2026',category:'architecture',cover:7,slides:['house-51.jpg','house-43.jpg','house-46.jpg','house-47.jpg','house-50.jpg','house-52.jpg'],pages:[7,3,4,5,6],pdf:3,description:'A residential concept anchored in the Norwegian landscape. A concrete lower level meets a lighter, charred-timber upper volume, balancing permanence with lightness.'},
+ {"title":"Kelp Line","subtitle":"A civic hub on the shoreline","location":"Long Beach, Kommetjie","year":"2026","category":"architecture","coverImage":"kommetjie-cover.jpg","slides":["kommetjie-cover.jpg","kommetjie-page-16.jpg","kommetjie-page-15.jpg","kommetjie-page-10.jpg","kommetjie-page-8.jpg","kommetjie-page-11.jpg","kommetjie-page-13.jpg","kommetjie-page-14.jpg","kommetjie-page-7.jpg","kommetjie-page-3.jpg","kommetjie-page-4.jpg"],"pages":[],"sourceUrl":"assets/kelp-line-kommetjie-presentation.pdf","sourceLabel":"View full presentation (PDF)","description":"A multipurpose civic hub at 1 Surf Way on Kommetjie’s shoreline. The proposal brings together a café, restaurant, multipurpose spaces and public beach facilities. Natural stone, steel and eucalyptus panels form the material palette, with floor plans, spatial analysis and a structural axonometric developing the proposal from site to construction."},
+ {title:'Red Box Theatre',subtitle:'City as a stage',location:'Cape Town',year:'2026',category:'architecture',cover:8,slides:['theatre-25.jpg','theatre-18.jpg','theatre-study-19.jpg','theatre-27.jpg'],pages:[8,9,10,11,12],pdf:8,description:'A mixed-use civic proposal bringing together a theatre, gallery and drama school. Framed views, visible rehearsal spaces and inhabitable thresholds connect performance with everyday city life.'},
+ {title:'The Woodstock Furnace',subtitle:'Architecture to preserve history',location:'Observatory, Cape Town',year:'2025',category:'architecture',cover:18,imageFit:'contain',pages:[18,19,20,21,22,23,24,25],pdf:18,description:'A glass-blowing workshop, gallery and coffee shop inspired by the history of the Woodstock Glass Factory. Form, a memorial garden and mosaic patterns turn the site’s past into a spatial experience.'},
+ {title:'Seriti',subtitle:'Connection, renewal, belonging',location:'Johannesburg',year:'2025',category:'architecture',cover:13,slides:['cover-13.jpg','cover-15.jpg'],pages:[13,14,15],pdf:13,description:'A multi-sensory retreat in Emmerentia Park. Inspired by the brown-veined butterfly, the proposal explores sound, taste, touch and sight through spaces woven into the surrounding ecosystem.'},
+ {title:'Gathered Voices',subtitle:'A platform for the unheard',location:'Sea Point Promenade',year:'2025',category:'architecture',cover:26,pages:[26,27],pdf:26,description:'A temporary pavilion for art, discussion and gathering. Gabion walls, timber decking and a lightweight display structure can be assembled and removed without damaging the promenade.'},
+ {title:'Light as Design Informant',subtitle:'Designing with light, for life',location:'Design research',year:'2026',category:'architecture',cover:16,imageFit:'contain',pages:[16,17],pdf:16,description:'An investigation into natural light as a design informant. Reflective modules harvest and redirect daylight to create changing conditions that respond to the body’s circadian rhythm.'},
+ {title:'Crèche',subtitle:'Space to learn and grow',location:'Deer Park, Vredehoek',year:'2024',category:'architecture',cover:28,pages:[28,29],pdf:28,description:'A preschool informed by Montessori and Waldorf philosophies, exploring independence, creativity and learning. The design developed through a topographic model made from more than 40 contour layers.'},
+ {title:'Op-o-site',subtitle:'An imagined way of living',location:'Cape Town',year:'2024',category:'architecture',cover:30,imageFit:'contain',pages:[30,31,32],pdf:30,description:'An experimental habitat for an imagined species. Workshops in timber, clay, steel and fabric informed a process of digital drawing and physical prototyping.'},
+];
+function prepareImages(item){item.images=[...(item.slides || [item.coverImage || `cover-${item.cover}.jpg`]),...(item.pages || []).map(n=>`page-${n}.jpg`)]}
+projects.forEach(prepareImages);
+const coverWidths={"house-52.jpg":2200,"project-covers/house-kamter-enhanced.jpg":1672,"project-covers/red-box-theatre-enhanced.jpg":1671,"project-covers/kelp-line-enhanced.jpg":1670,"project-covers/the-woodstock-furnace-enhanced.jpg":1626,"project-covers/seriti-enhanced.jpg":1666,"project-covers/gathered-voices-enhanced.jpg":1671,"project-covers/light-as-design-informant-enhanced.jpg":1096,"project-covers/creche-enhanced.jpg":1676,"project-covers/op-o-site-enhanced.jpg":1630,"kommetjie-cover.jpg":1690,"cover-16.jpg":1353,"cover-28.jpg":2205,"art-site-collage.jpg":1111,"art-watercolour.jpg":717,"art-process-sketch.jpg":1700,"art-papilomorphis.jpg":1700,"house-51.jpg":2200,"theatre-25.jpg":1749,"cover-30.jpg":2233,"cover-18.jpg":2224,"cover-26.jpg":2189,"cover-13.jpg":2195,"art-light-poster.jpg":825};
+const enhancedCovers={"House Kamter":"house-52.jpg","Red Box Theatre":"project-covers/red-box-theatre-enhanced.jpg","Kelp Line":"project-covers/kelp-line-enhanced.jpg","The Woodstock Furnace":"project-covers/the-woodstock-furnace-enhanced.jpg","Seriti":"project-covers/seriti-enhanced.jpg","Gathered Voices":"project-covers/gathered-voices-enhanced.jpg","Light as Design Informant":"project-covers/light-as-design-informant-enhanced.jpg","Crèche":"project-covers/creche-enhanced.jpg","Op-o-site":"project-covers/op-o-site-enhanced.jpg"};
+function renderCard(item,container,isStudy=false){
+ const card=document.createElement('button');card.className=`${isStudy?'study-card':'project'} reveal`;card.dataset.category=item.category || 'studies';card.setAttribute('aria-label',`Explore ${item.title}`);
+ const cover=enhancedCovers[item.title] || item.coverImage || (item.slides && item.slides[0]) || `cover-${item.cover}.jpg`;
+ card.innerHTML=`<div class="project-image ${item.imageFit==='contain'?'project-image--contain':''}"><img src="assets/${cover}" alt="${item.title} — ${item.subtitle}" loading="lazy" decoding="async" srcset="assets/responsive/${cover.replace('.jpg','')}-640.webp ${Math.min(640,coverWidths[cover])}w, assets/responsive/${cover.replace('.jpg','')}-1100.webp ${Math.min(1100,coverWidths[cover])}w" sizes="(max-width: 760px) 91vw, (max-width: 1500px) 44vw, 620px"><span aria-hidden="true">${arrowIcon()}</span></div><div class="project-meta"><div><h3>${item.title}</h3><p>${item.subtitle}${item.location?' · '+item.location:''}</p></div><span>${item.medium || item.year || ''}</span></div>`;
+ card.addEventListener('click',()=>openItem(item));container.append(card);
+}
+projects.forEach(p=>renderCard(p,document.querySelector('#projects')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.06});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active)});document.querySelectorAll('.project').forEach(c=>{c.hidden=button.dataset.filter!=='all'&&c.dataset.category!==button.dataset.filter})}));
+const dialog=document.querySelector('#project-dialog');let selected,index=0;
+function renderSlide(){const file=selected.images[index];document.querySelector('#gallery-image').src=`assets/${file}`;document.querySelector('#gallery-image').alt=`${selected.title}, image ${index+1} of ${selected.images.length}`;document.querySelector('#gallery-count').textContent=`${String(index+1).padStart(2,'0')} / ${String(selected.images.length).padStart(2,'0')}`;document.querySelector('#previous').disabled=selected.images.length===1;document.querySelector('#next').disabled=selected.images.length===1}
+function openItem(item){selected=item;index=0;document.querySelector('#dialog-title').textContent=selected.title;document.querySelector('#gallery-description').textContent=selected.description;const link=document.querySelector('#project-pdf');link.href=selected.sourceUrl || `assets/emma-steyn-portfolio.pdf#page=${selected.pdf}`;link.textContent=selected.sourceLabel || (selected.sourceUrl?'Open source image':'View in portfolio');link.insertAdjacentHTML('beforeend',arrowIcon());renderSlide();dialog.showModal();document.body.style.overflow='hidden'}
+function changeSlide(delta){index=(index+delta+selected.images.length)%selected.images.length;renderSlide()}
+document.querySelector('#previous').addEventListener('click',()=>changeSlide(-1));document.querySelector('#next').addEventListener('click',()=>changeSlide(1));document.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>document.body.style.overflow='');dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close()}});dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();changeSlide(-1)}if(e.key==='ArrowRight'){e.preventDefault();changeSlide(1)}});
+document.querySelector('#year').textContent=new Date().getFullYear();let pending=false;window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(()=>{const range=document.documentElement.scrollHeight-innerHeight;document.querySelector('.scroll-progress').style.width=`${range>0?scrollY/range*100:0}%`;pending=false})}},{passive:true});
+// The abstract line study responds to the pointer; artworks themselves stay unaltered.
+const composition=document.querySelector('.abstract-composition');
+if(composition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){composition.addEventListener('pointermove',e=>{const b=composition.getBoundingClientRect();composition.style.setProperty('--drift-x',`${(e.clientX-b.left-b.width/2)*.018}px`);composition.style.setProperty('--drift-y',`${(e.clientY-b.top-b.height/2)*.018}px`)});composition.addEventListener('pointerleave',()=>{composition.style.setProperty('--drift-x','0px');composition.style.setProperty('--drift-y','0px')})}
+
+// Swipe without blocking vertical scrolling or pinch zoom.
+const galleryImage=document.querySelector('#gallery-image');let swipeStart=null;
+galleryImage.addEventListener('touchstart',event=>{swipeStart=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null},{passive:true});
+galleryImage.addEventListener('touchend',event=>{if(!swipeStart||!selected)return;const end=event.changedTouches[0];const dx=end.clientX-swipeStart.x,dy=end.clientY-swipeStart.y;swipeStart=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5&&selected.images.length>1)changeSlide(dx<0?1:-1)},{passive:true});
+galleryImage.addEventListener('touchcancel',()=>{swipeStart=null},{passive:true});
+const contactForm=document.querySelector('.contact-form');
+contactForm.addEventListener('submit',()=>{const button=contactForm.querySelector('button[type=submit]');button.disabled=true;button.textContent='Opening secure send…';const status=document.querySelector('#contact-status');status.hidden=false;status.textContent='Complete the verification on the next page to submit your message.';});
+window.addEventListener('pageshow',()=>{const button=contactForm.querySelector('button[type=submit]');button.disabled=false;button.innerHTML='Send message '+arrowIcon();document.querySelector('#contact-status').hidden=true;});
+
+// Drift continuously at twelve pixels per second, with a seamless loop.
+(()=>{
+ const section=document.querySelector('.instagram-carousel');if(!section)return;
+ const strip=section.querySelector('.instagram-strip'),toggle=section.querySelector('#instagram-toggle');
+ const cards=[...strip.children],count=cards.length,motion=matchMedia('(prefers-reduced-motion: reduce)');
+ for(const position of ['before','after']){
+  const fragment=document.createDocumentFragment();
+  cards.forEach(card=>{const copy=card.cloneNode(true);copy.setAttribute('aria-hidden','true');copy.tabIndex=-1;copy.querySelector('img').alt='';fragment.append(copy)});
+  position==='before'?strip.prepend(fragment):strip.append(fragment);
+ }
+ strip.classList.add('is-looping');
+ let paused=motion.matches,visible=false,autoFrame=0,position=0,step=0,length=0;
+ function normalize(){if(!length)return;while(strip.scrollLeft<length-step/2)strip.scrollLeft+=length;while(strip.scrollLeft>=length*2-step/2)strip.scrollLeft-=length}
+ function measure(){const oldStep=step,index=oldStep?Math.round(strip.scrollLeft/oldStep)%count:0;step=cards[0].getBoundingClientRect().width+parseFloat(getComputedStyle(strip).columnGap);length=step*count;strip.scrollLeft=length+index*step;position=strip.scrollLeft}
+ function advance(direction=1){
+  normalize();strip.scrollLeft+=direction*step;normalize();position=strip.scrollLeft;
+ }
+ function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start automatic photo rotation':'Pause automatic photo rotation')}
+ function schedule(){
+  cancelAnimationFrame(autoFrame);autoFrame=0;
+  if(paused||!visible||document.hidden)return
+  let last=performance.now();position=strip.scrollLeft;
+  function drift(now){
+   const elapsed=Math.min(now-last,64);last=now;
+   if(length){
+    if(Math.abs(strip.scrollLeft-position)>1)position=strip.scrollLeft;
+    position+=elapsed*.012;
+    while(position>=length*2-step/2)position-=length;
+    while(position<length-step/2)position+=length;
+    strip.scrollLeft=position;
+   }else position=strip.scrollLeft;
+   autoFrame=requestAnimationFrame(drift);
+  }
+  autoFrame=requestAnimationFrame(drift);
+ }
+ toggle.addEventListener('click',()=>{paused=!paused;label();schedule()});
+ section.querySelector('#instagram-previous').addEventListener('click',()=>advance(-1));
+ section.querySelector('#instagram-next').addEventListener('click',()=>advance(1));
+ strip.addEventListener('scrollend',normalize);
+ strip.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();advance(event.key==='ArrowRight'?1:-1)}});
+ document.addEventListener('visibilitychange',schedule);motion.addEventListener('change',()=>{paused=motion.matches;label();schedule()});
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule()},{threshold:.15}).observe(section);
+ new ResizeObserver(measure).observe(strip);measure();section.querySelector('.instagram-controls').hidden=false;label();
+})();

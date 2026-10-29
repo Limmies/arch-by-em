@@ -2,8 +2,8 @@
 const arrowIcon=()=>'<svg width="20" height="20" class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg>';
 const projects = [
  {title:'House Kamter',subtitle:'Emerging from the mountains',location:'Geirangerfjord, Norway',year:'2026',category:'architecture',cover:7,slides:['house-51.jpg','house-43.jpg','house-46.jpg','house-47.jpg','house-50.jpg','house-52.jpg'],pages:[7,3,4,5,6],pdf:3,description:'A residential concept anchored in the Norwegian landscape. A concrete lower level meets a lighter, charred-timber upper volume, balancing permanence with lightness.'},
- {title:'Red Box Theatre',subtitle:'City as a stage',location:'Cape Town',year:'2026',category:'architecture',cover:8,slides:['theatre-25.jpg','theatre-18.jpg','theatre-study-19.jpg','theatre-27.jpg'],pages:[8,9,10,11,12],pdf:8,description:'A mixed-use civic proposal bringing together a theatre, gallery and drama school. Framed views, visible rehearsal spaces and inhabitable thresholds connect performance with everyday city life.'},
  {"title":"Kelp Line","subtitle":"A civic hub on the shoreline","location":"Long Beach, Kommetjie","year":"2026","category":"architecture","coverImage":"kommetjie-cover.jpg","slides":["kommetjie-cover.jpg","kommetjie-page-16.jpg","kommetjie-page-15.jpg","kommetjie-page-10.jpg","kommetjie-page-8.jpg","kommetjie-page-11.jpg","kommetjie-page-13.jpg","kommetjie-page-14.jpg","kommetjie-page-7.jpg","kommetjie-page-3.jpg","kommetjie-page-4.jpg"],"pages":[],"sourceUrl":"assets/kelp-line-kommetjie-presentation.pdf","sourceLabel":"View full presentation (PDF)","description":"A multipurpose civic hub at 1 Surf Way on Kommetjie’s shoreline. The proposal brings together a café, restaurant, multipurpose spaces and public beach facilities. Natural stone, steel and eucalyptus panels form the material palette, with floor plans, spatial analysis and a structural axonometric developing the proposal from site to construction."},
+ {title:'Red Box Theatre',subtitle:'City as a stage',location:'Cape Town',year:'2026',category:'architecture',cover:8,slides:['theatre-25.jpg','theatre-18.jpg','theatre-study-19.jpg','theatre-27.jpg'],pages:[8,9,10,11,12],pdf:8,description:'A mixed-use civic proposal bringing together a theatre, gallery and drama school. Framed views, visible rehearsal spaces and inhabitable thresholds connect performance with everyday city life.'},
  {title:'The Woodstock Furnace',subtitle:'Architecture to preserve history',location:'Observatory, Cape Town',year:'2025',category:'architecture',cover:18,imageFit:'contain',pages:[18,19,20,21,22,23,24,25],pdf:18,description:'A glass-blowing workshop, gallery and coffee shop inspired by the history of the Woodstock Glass Factory. Form, a memorial garden and mosaic patterns turn the site’s past into a spatial experience.'},
  {title:'Seriti',subtitle:'Connection, renewal, belonging',location:'Johannesburg',year:'2025',category:'architecture',cover:13,slides:['cover-13.jpg','cover-15.jpg'],pages:[13,14,15],pdf:13,description:'A multi-sensory retreat in Emmerentia Park. Inspired by the brown-veined butterfly, the proposal explores sound, taste, touch and sight through spaces woven into the surrounding ecosystem.'},
  {title:'Gathered Voices',subtitle:'A platform for the unheard',location:'Sea Point Promenade',year:'2025',category:'architecture',cover:26,pages:[26,27],pdf:26,description:'A temporary pavilion for art, discussion and gathering. Gabion walls, timber decking and a lightweight display structure can be assembled and removed without damaging the promenade.'},
@@ -13,8 +13,8 @@ const projects = [
 ];
 function prepareImages(item){item.images=[...(item.slides || [item.coverImage || `cover-${item.cover}.jpg`]),...(item.pages || []).map(n=>`page-${n}.jpg`)]}
 projects.forEach(prepareImages);
-const coverWidths={"project-covers/house-kamter-enhanced.jpg":1672,"project-covers/red-box-theatre-enhanced.jpg":1671,"project-covers/kelp-line-enhanced.jpg":1670,"project-covers/the-woodstock-furnace-enhanced.jpg":1626,"project-covers/seriti-enhanced.jpg":1666,"project-covers/gathered-voices-enhanced.jpg":1671,"project-covers/light-as-design-informant-enhanced.jpg":1096,"project-covers/creche-enhanced.jpg":1676,"project-covers/op-o-site-enhanced.jpg":1630,"kommetjie-cover.jpg":1690,"cover-16.jpg":1353,"cover-28.jpg":2205,"art-site-collage.jpg":1111,"art-watercolour.jpg":717,"art-process-sketch.jpg":1700,"art-papilomorphis.jpg":1700,"house-51.jpg":2200,"theatre-25.jpg":1749,"cover-30.jpg":2233,"cover-18.jpg":2224,"cover-26.jpg":2189,"cover-13.jpg":2195,"art-light-poster.jpg":825};
-const enhancedCovers={"House Kamter":"project-covers/house-kamter-enhanced.jpg","Red Box Theatre":"project-covers/red-box-theatre-enhanced.jpg","Kelp Line":"project-covers/kelp-line-enhanced.jpg","The Woodstock Furnace":"project-covers/the-woodstock-furnace-enhanced.jpg","Seriti":"project-covers/seriti-enhanced.jpg","Gathered Voices":"project-covers/gathered-voices-enhanced.jpg","Light as Design Informant":"project-covers/light-as-design-informant-enhanced.jpg","Crèche":"project-covers/creche-enhanced.jpg","Op-o-site":"project-covers/op-o-site-enhanced.jpg"};
+const coverWidths={"house-52.jpg":2200,"project-covers/house-kamter-enhanced.jpg":1672,"project-covers/red-box-theatre-enhanced.jpg":1671,"project-covers/kelp-line-enhanced.jpg":1670,"project-covers/the-woodstock-furnace-enhanced.jpg":1626,"project-covers/seriti-enhanced.jpg":1666,"project-covers/gathered-voices-enhanced.jpg":1671,"project-covers/light-as-design-informant-enhanced.jpg":1096,"project-covers/creche-enhanced.jpg":1676,"project-covers/op-o-site-enhanced.jpg":1630,"kommetjie-cover.jpg":1690,"cover-16.jpg":1353,"cover-28.jpg":2205,"art-site-collage.jpg":1111,"art-watercolour.jpg":717,"art-process-sketch.jpg":1700,"art-papilomorphis.jpg":1700,"house-51.jpg":2200,"theatre-25.jpg":1749,"cover-30.jpg":2233,"cover-18.jpg":2224,"cover-26.jpg":2189,"cover-13.jpg":2195,"art-light-poster.jpg":825};
+const enhancedCovers={"House Kamter":"house-52.jpg","Red Box Theatre":"project-covers/red-box-theatre-enhanced.jpg","Kelp Line":"project-covers/kelp-line-enhanced.jpg","The Woodstock Furnace":"project-covers/the-woodstock-furnace-enhanced.jpg","Seriti":"project-covers/seriti-enhanced.jpg","Gathered Voices":"project-covers/gathered-voices-enhanced.jpg","Light as Design Informant":"project-covers/light-as-design-informant-enhanced.jpg","Crèche":"project-covers/creche-enhanced.jpg","Op-o-site":"project-covers/op-o-site-enhanced.jpg"};
 function renderCard(item,container,isStudy=false){
  const card=document.createElement('button');card.className=`${isStudy?'study-card':'project'} reveal`;card.dataset.category=item.category || 'studies';card.setAttribute('aria-label',`Explore ${item.title}`);
  const cover=enhancedCovers[item.title] || item.coverImage || (item.slides && item.slides[0]) || `cover-${item.cover}.jpg`;
@@ -43,7 +43,7 @@ const contactForm=document.querySelector('.contact-form');
 contactForm.addEventListener('submit',()=>{const button=contactForm.querySelector('button[type=submit]');button.disabled=true;button.textContent='Opening secure send…';const status=document.querySelector('#contact-status');status.hidden=false;status.textContent='Complete the verification on the next page to submit your message.';});
 window.addEventListener('pageshow',()=>{const button=contactForm.querySelector('button[type=submit]');button.disabled=false;button.innerHTML='Send message '+arrowIcon();document.querySelector('#contact-status').hidden=true;});
 
-// Advance every 2.5 seconds with a gentle 1.9-second glide and a seamless loop.
+// Drift continuously at twelve pixels per second, with a seamless loop.
 (()=>{
  const section=document.querySelector('.instagram-carousel');if(!section)return;
  const strip=section.querySelector('.instagram-strip'),toggle=section.querySelector('#instagram-toggle');
@@ -54,29 +54,35 @@ window.addEventListener('pageshow',()=>{const button=contactForm.querySelector('
   position==='before'?strip.prepend(fragment):strip.append(fragment);
  }
  strip.classList.add('is-looping');
- let paused=motion.matches,visible=false,hovered=false,timer,frame=0,interactionUntil=0,step=0,length=0;
- const focused=()=>section.contains(document.activeElement)&&document.activeElement!==toggle;
- function stop(){cancelAnimationFrame(frame);frame=0}
+ let paused=motion.matches,visible=false,autoFrame=0,position=0,step=0,length=0;
  function normalize(){if(!length)return;while(strip.scrollLeft<length-step/2)strip.scrollLeft+=length;while(strip.scrollLeft>=length*2-step/2)strip.scrollLeft-=length}
- function measure(){const oldStep=step,index=oldStep?Math.round(strip.scrollLeft/oldStep)%count:0;stop();step=cards[0].getBoundingClientRect().width+parseFloat(getComputedStyle(strip).columnGap);length=step*count;strip.scrollLeft=length+index*step}
+ function measure(){const oldStep=step,index=oldStep?Math.round(strip.scrollLeft/oldStep)%count:0;step=cards[0].getBoundingClientRect().width+parseFloat(getComputedStyle(strip).columnGap);length=step*count;strip.scrollLeft=length+index*step;position=strip.scrollLeft}
  function advance(direction=1){
-  stop();normalize();const start=strip.scrollLeft,target=(Math.round(start/step)+direction)*step;
-  if(motion.matches){strip.scrollLeft=target;normalize();return}
-  const started=performance.now();
-  function glide(now){const progress=Math.min(1,(now-started)/1900);strip.scrollLeft=start+(target-start)*(1-Math.cos(Math.PI*progress))/2;if(progress<1)frame=requestAnimationFrame(glide);else{frame=0;normalize()}}
-  frame=requestAnimationFrame(glide);
+  normalize();strip.scrollLeft+=direction*step;normalize();position=strip.scrollLeft;
  }
  function label(){toggle.textContent=paused?'Play':'Pause';toggle.setAttribute('aria-label',paused?'Start automatic photo rotation':'Pause automatic photo rotation')}
- function schedule(){clearInterval(timer);if(paused||!visible||document.hidden){stop();return}timer=setInterval(()=>{if(!hovered&&!focused()&&Date.now()>=interactionUntil)advance()},2500)}
- function interact(){stop();interactionUntil=Date.now()+8000}
+ function schedule(){
+  cancelAnimationFrame(autoFrame);autoFrame=0;
+  if(paused||!visible||document.hidden)return
+  let last=performance.now();position=strip.scrollLeft;
+  function drift(now){
+   const elapsed=Math.min(now-last,64);last=now;
+   if(length){
+    if(Math.abs(strip.scrollLeft-position)>1)position=strip.scrollLeft;
+    position+=elapsed*.012;
+    while(position>=length*2-step/2)position-=length;
+    while(position<length-step/2)position+=length;
+    strip.scrollLeft=position;
+   }else position=strip.scrollLeft;
+   autoFrame=requestAnimationFrame(drift);
+  }
+  autoFrame=requestAnimationFrame(drift);
+ }
  toggle.addEventListener('click',()=>{paused=!paused;label();schedule()});
- section.querySelector('#instagram-previous').addEventListener('click',()=>{interact();advance(-1)});
- section.querySelector('#instagram-next').addEventListener('click',()=>{interact();advance(1)});
- section.addEventListener('mouseenter',()=>{hovered=true;stop()});section.addEventListener('mouseleave',()=>{hovered=false});
- section.addEventListener('focusin',()=>{if(focused())stop()});
- strip.addEventListener('pointerdown',interact,{passive:true});strip.addEventListener('wheel',interact,{passive:true});
- strip.addEventListener('scrollend',()=>{if(!frame)normalize()});
- strip.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();interact();advance(event.key==='ArrowRight'?1:-1)}});
+ section.querySelector('#instagram-previous').addEventListener('click',()=>advance(-1));
+ section.querySelector('#instagram-next').addEventListener('click',()=>advance(1));
+ strip.addEventListener('scrollend',normalize);
+ strip.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();advance(event.key==='ArrowRight'?1:-1)}});
  document.addEventListener('visibilitychange',schedule);motion.addEventListener('change',()=>{paused=motion.matches;label();schedule()});
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule()},{threshold:.15}).observe(section);
  new ResizeObserver(measure).observe(strip);measure();section.querySelector('.instagram-controls').hidden=false;label();

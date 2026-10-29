@@ -52,9 +52,9 @@ main{max-width:1400px;margin-inline:auto}.hero-orbit,.intro-line,.abstract-compo
 @media(hover:none){.project:hover img,.study-card:hover .project-image img,.hero-image:hover>img{transform:none}}
 
 /* Selected Instagram posts, with a four-second photo-strip rotation. */
-.instagram-section{margin-top:85px;padding-top:75px;border-top:1px solid var(--line)}.instagram-section h2 em{font-family:Georgia,serif;font-weight:400;color:var(--accent)}.instagram-section .section-heading{align-items:center}.instagram-section .text-link{margin-top:0}.instagram-carousel{min-width:0}.instagram-strip{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line) transparent;padding:4px 0 15px;outline-offset:4px}.instagram-card{min-width:0;scroll-snap-align:start;display:block}.instagram-photo{aspect-ratio:1;background:#fff;padding:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}.instagram-photo img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .4s}.instagram-card:hover img{transform:scale(1.025)}.instagram-caption{display:flex;justify-content:space-between;gap:12px;margin-top:13px;font-size:12px;line-height:1.7}.instagram-caption>span{font-size:17px}.instagram-bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:16px}.instagram-bottom>p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}.instagram-controls{display:flex;gap:10px;flex-shrink:0}.instagram-controls[hidden]{display:none}.instagram-controls button{width:48px;height:48px;min-width:48px;cursor:pointer;background:none;border:1px solid var(--line);border-radius:50%;font-size:20px;touch-action:manipulation}.instagram-controls #instagram-toggle{width:auto;min-width:78px;border-radius:24px;padding-inline:16px;font-size:13px}.instagram-controls button:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.instagram-section{margin-top:85px;padding-top:75px;border-top:1px solid var(--line)}.instagram-section h2 em{font-family:Georgia,serif;font-weight:400;color:var(--accent)}.instagram-section .section-heading{align-items:center}.instagram-section .text-link{margin-top:0}.instagram-carousel{min-width:0}.instagram-strip{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line) transparent;padding:4px 0 15px;outline-offset:4px}.instagram-card{min-width:0;scroll-snap-align:start;display:block}.instagram-photo{aspect-ratio:1;background:#fff;padding:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}.instagram-photo img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .4s}.instagram-card:hover .instagram-photo img{transform:scale(1.025)}.instagram-caption{display:flex;justify-content:space-between;gap:12px;margin-top:13px;font-size:12px;line-height:1.7}.instagram-caption>span{font-size:17px}.instagram-bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:16px}.instagram-bottom>p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}.instagram-controls{display:flex;gap:10px;flex-shrink:0}.instagram-controls[hidden]{display:none}.instagram-controls button{width:48px;height:48px;min-width:48px;cursor:pointer;background:none;border:1px solid var(--line);border-radius:50%;font-size:20px;touch-action:manipulation}.instagram-controls #instagram-toggle{width:auto;min-width:78px;border-radius:24px;padding-inline:16px;font-size:13px}.instagram-controls button:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 @media(max-width:1000px){.instagram-strip{grid-auto-columns:calc((100% - 32px)/3)}}
-@media(max-width:760px){.instagram-section{margin-top:55px;padding-top:50px}.instagram-section .section-heading{display:block}.instagram-section .text-link{margin-top:12px;font-size:14px;min-height:44px}.instagram-strip{grid-auto-columns:72%;gap:14px}.instagram-photo{padding:8px}.instagram-caption{font-size:14px}.instagram-bottom{align-items:start;flex-direction:column;gap:16px}.instagram-bottom>p{font-size:14px}.instagram-controls{align-self:flex-end}.instagram-card:hover img{transform:none}}
+@media(max-width:760px){.instagram-section{margin-top:55px;padding-top:50px}.instagram-section .section-heading{display:block}.instagram-section .text-link{margin-top:12px;font-size:14px;min-height:44px}.instagram-strip{grid-auto-columns:72%;gap:14px}.instagram-photo{padding:8px}.instagram-caption{font-size:14px}.instagram-bottom{align-items:start;flex-direction:column;gap:16px}.instagram-bottom>p{font-size:14px}.instagram-controls{align-self:flex-end}.instagram-card:hover .instagram-photo img{transform:none}}
 @media(prefers-reduced-motion:reduce){.instagram-photo img{transition:none}}
 
 /* Reserve photo geometry before lazy images arrive. */
@@ -89,7 +89,7 @@ h1,h2,h3{color:var(--heading-gray)}h1 em,h2 em,.contact h2 span{color:var(--acce
 .instagram-post-account>span{display:block;font-size:10px;font-weight:400;color:var(--muted)}
 .post-icon{width:21px;height:21px;flex-shrink:0;display:block}
 .instagram-photo{aspect-ratio:1;padding:0;border:0;background:#fff;display:flex;align-items:center;justify-content:center}
-.instagram-photo img,.instagram-card:hover img{position:static;inset:auto;display:block;width:100%;height:100%;max-width:100%;padding:0;object-fit:contain;transform:none;transition:none}
+.instagram-photo img,.instagram-card:hover .instagram-photo img{position:static;inset:auto;display:block;width:100%;height:100%;max-width:100%;padding:0;object-fit:contain;transform:none;transition:none}
 .instagram-post-body{padding:14px 15px 16px;border-top:1px solid #eeede9}
 .instagram-post-actions{display:flex;align-items:center;gap:15px;margin-bottom:13px}
 .instagram-save{margin-left:auto}
@@ -115,3 +115,39 @@ h1,h2,h3{color:var(--heading-gray)}h1 em,h2 em,.contact h2 span{color:var(--acce
 .gallery-controls .arrow-icon,.instagram-controls .arrow-icon{width:20px;height:20px}
 #project-pdf .arrow-icon{margin-left:7px}
 .contact-send button>.arrow-icon{width:20px;height:20px}
+
+/* Current homepage; original portfolio, About and Instagram sections. */
+.hero{position:relative;isolation:isolate;color:#fff}.hero-image{position:absolute;z-index:0;height:auto;background:#34403a}.hero-image>img{width:100%;height:100%;object-fit:cover}.hero-image::after{content:"";position:absolute;inset:0;pointer-events:none}.hero-top{position:relative;z-index:1;gap:20px}.hero-top .eyebrow,.hero-top>span{color:#fff}.hero-top .dot{background:#fff}.headline h1{color:#fff;font-weight:400;letter-spacing:-.065em;line-height:1.03}.headline h1 em{color:#fff;font-family:Georgia,serif;font-weight:400}.hero-note{color:#fff}.image-label,.round-link{z-index:1}.image-caption{position:absolute;margin:0;align-items:center;font-size:11px}
+
+main{padding:0;max-width:none;margin:0}
+header{position:absolute;z-index:5;top:24px;left:50%;transform:translateX(-50%);width:min(640px,calc(100% - 48px));max-width:none;margin:0;height:72px;min-height:0;padding:12px 22px;background:transparent;border:0;backdrop-filter:none;display:flex;gap:24px}
+header .logo{font-size:23px;min-height:44px}header nav{margin:0;gap:24px;font-size:12px;flex-wrap:nowrap}header nav a{white-space:nowrap}
+.hero{margin:0;height:100svh;min-height:760px;max-height:1100px;padding:160px 4% 100px}
+.hero-image{inset:0}.hero-image>img{object-position:50% center}
+.hero-image::after{background:linear-gradient(180deg,#0d191b55 0%,#0d191b12 43%,#0d191b77 100%)}
+.hero-top{font-size:10px}.headline{position:static;margin-top:36px;display:block}.headline h1{font-size:clamp(72px,8.5vw,145px);max-width:1120px;position:relative;z-index:1}
+.hero-note{position:absolute;z-index:1;right:4%;bottom:140px;width:310px;font-size:16px;line-height:1.8;margin:0}
+.image-label{left:4%;bottom:35px}.round-link{right:4%;bottom:30px}.image-caption{bottom:-48px;left:4%;right:4%;min-height:36px}
+.section,.about-personal,.instagram-section,.contact{margin-inline:4.5%}
+#work{padding-top:132px}
+@media(max-width:1000px) and (min-width:761px){.hero{padding-top:150px}.headline h1{font-size:88px}.hero-note{width:275px}}
+@media(max-width:760px){header{top:16px;width:calc(100% - 32px);height:66px;padding:8px 14px;gap:12px}header .logo{font-size:20px}header nav{font-size:11px;gap:12px}header nav a{padding:6px 0;min-height:44px}.hero{padding:128px 6% 100px;min-height:800px;height:100svh;max-height:1000px}.hero-top .eyebrow{max-width:260px}.headline{margin-top:32px}.headline h1{font-size:clamp(52px,11vw,82px)}.hero-note{right:6%;left:6%;bottom:140px;width:auto;max-width:340px;font-size:15px;line-height:1.8}.hero-image>img{object-position:50% center}.image-label{left:6%;bottom:30px;right:88px}.round-link{right:6%;bottom:30px}.image-caption{bottom:-68px;left:6%;right:6%;min-height:54px;flex-wrap:nowrap}.image-caption>span{max-width:55%}.section,.about-personal,.instagram-section,.contact{margin-inline:4.5%}#work{padding-top:125px}}
+@media(max-width:360px){header{gap:8px;padding-inline:10px}header .logo{font-size:18px}header nav{font-size:10px;gap:10px}.hero-note{font-size:14px}.headline h1{font-size:50px}}
+
+/* Frame the fjord view on narrow screens. */
+@media(max-width:760px){.hero{height:820px;min-height:820px}.hero-image{background:#59656d}.hero-image>img{position:absolute;bottom:148px;height:360px;object-position:50% center}.hero-image::after{background:linear-gradient(180deg,#15232622 0%,transparent 36%,#15232622 65%,#172323 84%)}.hero-note{bottom:26px;max-width:390px}.image-label{bottom:174px}.round-link{bottom:170px}}
+
+/* Navigation sits directly over the homepage photograph. */
+header,header .logo,header .logo span,header nav,header nav a,header nav a:hover{color:#fff}header a{text-shadow:0 1px 5px #101a3659}header a:focus-visible{outline-color:#fff}
+
+/* Five compact Instagram cards across desktop. */
+@media(min-width:1001px){.instagram-strip{grid-auto-columns:calc((100% - 64px)/5);gap:16px}.instagram-post-header{gap:7px;padding:10px}.instagram-avatar{width:28px;height:28px;font-size:17px}.instagram-post-account{font-size:11px;min-width:0}.instagram-post-account>span{font-size:9px}.instagram-post-header>.post-icon{width:16px;height:16px}.instagram-post-body{padding:10px}.instagram-post-actions{gap:10px;margin-bottom:10px}.instagram-post-actions .post-icon{width:18px;height:18px}.instagram-caption{font-size:11px;min-height:56px}.instagram-view{font-size:10px}}
+
+/* A subtle enlargement for project cards on devices with a hover pointer. */
+@media(hover:hover) and (pointer:fine){#projects .project{position:relative;transform-origin:center;transition:opacity .8s,transform .28s ease}#projects .project.visible:hover{transform:scale(1.025);z-index:1}}
+@media(prefers-reduced-motion:reduce){#projects .project.visible:hover{transform:none}}
+
+/* Emma’s original Instagram logo, shared across the site branding. */
+.logo{display:inline-flex;align-items:center;gap:9px}.logo-mark{display:block;width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0}footer .logo-mark{width:32px;height:32px}.instagram-avatar{object-fit:cover}
+@media(max-width:760px){header .logo{gap:6px}header .logo-mark{width:28px;height:28px}}
+@media(max-width:360px){header .logo{font-size:16px}header .logo-mark{width:24px;height:24px}header nav{gap:8px}}
